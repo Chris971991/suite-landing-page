@@ -170,6 +170,9 @@ img {
   display: flex;
   align-items: center;
   height: 37.5rem;
+  background: url(../assets/image-hero-portrait.png);
+  background-repeat: no-repeat;
+  background-position: right 320px center;
 
   &-info {
     max-width: 39.688rem;
@@ -201,33 +204,18 @@ img {
     gap: 3.938rem;
     width: 11.875rem;
   }
+}
 
-  .hero-bg {
-    z-index: -999;
-    max-width: 100%;
-    position: absolute;
-    background: url(../assets/image-hero-portrait.webp);
-    right: 20rem;
-  }
-
-  @media (max-width: $tablet) {
-    .hero-bg {
-      right: 2rem;
-    }
-  }
-
-  .hero-curve {
-    z-index: -10;
-    position: absolute;
-    top: 3.125rem;
-    left: 320px;
-  }
+.hero-curve {
+  position: absolute;
+  top: 3.125rem;
+  left: 320px;
 }
 
 .review {
   position: absolute;
 
-  width: 100%;
+  min-width: 100%;
   bottom: -272px;
 
   &-container {
@@ -240,22 +228,28 @@ img {
     .container-info {
       position: absolute;
       bottom: 0;
-      display: flex;
-      align-items: center;
-
+      // display: flex;
+      // align-items: center;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: 45px 88px 73px 52px 243px 88px;
       .review-img {
         max-width: 100%;
+        grid-row: 1 / 7;
+        grid-column: 1 / 2;
       }
 
       .curve {
-        margin-left: 2.244rem;
-        margin-right: 3.297rem;
-        margin-bottom: 7.5rem;
+        grid-row: 4 / 6;
+        grid-column: 2 / 3;
+        margin-left: 36px;
+        margin-right: 53px;
       }
     }
 
     .review-info {
-      margin-top: 50px;
+      grid-row: 3 / 6;
+      grid-column: 3 / 4;
       max-width: 350px;
       .heading-l,
       .heading-m,
